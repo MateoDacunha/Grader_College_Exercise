@@ -1,0 +1,8 @@
+[*] --> White
+White --> Black: Move
+Black --> White: Move
+White --> Resign
+Black --> Resign
+White --> Draw
+Black --> [*]:Checkmate/Stalemate
+White --> [*]:Checkmate/Stalemate

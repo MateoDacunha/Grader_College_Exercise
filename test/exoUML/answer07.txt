@@ -1,0 +1,10 @@
+@startuml
+[*] --> WhiteTurn
+WhiteTurn --> BlackTurn : legalmove[not checkmate]
+BlackTurn --> WhiteWon : stalemate
+BlackTurn --> WhiteTurn : legalmove[not checkmate]
+WhiteTurn --> BlackWon : stalemate
+BlackWon --> [*]
+WhiteWon --> [*]
+@enduml
+

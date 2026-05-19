@@ -1,0 +1,17 @@
+@startuml
+[*] --> s1
+[*] --> s3
+[*] --> s3
+[*] --> s3
+
+state "White Move" as s1
+state "Black Move" as s2
+state "CheckMate" as s3
+state "Draw" as s4
+s1 --> s2 : valid move
+s2 --> s1 : valid move
+s1 --> s3 : checkmate
+s2 --> s3 : checkmate
+s1 --> s4 : draw
+s2 --> s4 : draw
+@enduml

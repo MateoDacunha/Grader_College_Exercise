@@ -1,0 +1,17 @@
+@startuml
+[*]-->s1
+state "white" as s1 
+s1-->s2: "valid move"
+state "black" as s2
+s1-->s4: "no more legal move" 
+s2-->s1: "valid move"
+state "tie" as s3
+s1-->s3: "3 move rep"
+s2-->s3: "3 move rep"
+s2-->s5: "no more legal move"
+state "black win" as s4
+state "white win" as s5
+s5-->[*]
+s4-->[*]
+s3-->[*]
+@enduml

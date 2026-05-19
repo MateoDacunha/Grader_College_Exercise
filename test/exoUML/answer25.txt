@@ -1,0 +1,17 @@
+@startuml
+[*] --> state1
+state1 : white plays
+state2 : black plays
+
+state1 --> [*] : No legal movement \n / Black wins
+state1 --> [*] : Agree on draw \n / Declare draw
+state1 --> [*] : Resign \n / Black wins
+
+state2 --> [*] : No legal movement \n / White wins
+state2 --> [*] : Agree on draw \n / Declare draw
+state2 --> [*] : Resign \n / white wins
+
+state1 -> state2 : do legal move
+state2 -> state1 : do legal move
+
+@enduml

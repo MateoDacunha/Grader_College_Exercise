@@ -1,0 +1,20 @@
+@startuml
+State "place" as State1
+State "chackmate" as State2
+State "game over" as State3
+State "result" as State4
+
+[*] --> State1
+State1 : \attack
+State1 : \caputure
+
+State1 --> State2 : king can't move
+
+State1 --> State3:  no legal moves
+State3 : stalement
+
+State1 --> State4 : get result
+State4 : agreement
+State4 : three hold
+State4 : replacement
+@enduml

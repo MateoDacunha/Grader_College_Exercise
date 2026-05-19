@@ -1,0 +1,11 @@
+@startuml
+[*] --> Red
+Red --> Blue: Move
+Blue --> Red: Move
+Red --> Abandon
+Blue --> Blue
+Blue --> Egalité
+Red --> Egalité
+Blue --> [*]:Checkmate/Stalemate
+Red --> [*]:Checkmate/Stalemate
+@enduml

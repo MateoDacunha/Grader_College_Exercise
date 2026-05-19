@@ -1,0 +1,8 @@
+@startuml
+[*] --> ArePlaying: WhiteMove
+ArePlaying-->ArePlaying: PlayValidMove
+
+ArePlaying-->GameWon: 1.PlayInvalidMove, 2.CheckmateUnavoidable, 3. Resignation
+ArePlaying-->GameDraw: 1. ByAgreement, 2. ThreeFoldRepetion
+
+@enduml

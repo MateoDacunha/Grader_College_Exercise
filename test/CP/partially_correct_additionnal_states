@@ -1,0 +1,12 @@
+@startuml
+[*] --> White
+White --> Black
+Black --> White
+White --> Resign
+Black --> Resign
+Black --> Draw
+White --> Draw
+Black --> [*]
+White --> [*]
+White --> An_unknown_state
+@enduml

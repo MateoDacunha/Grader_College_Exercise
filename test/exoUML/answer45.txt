@@ -1,0 +1,19 @@
+@startuml
+State "Innit" as S1
+State "Resignation" as S2
+State "Move piece" as S3
+State "Continue" as S4
+State "Kill piece" as S5
+State "Win" as S6
+
+
+[*] --> S1
+S1 --> S2: Give up 
+S1 --> S3
+S1 --> S4
+S4 --> S2: Then move
+S3 --> S3: Move another
+S3 --> S5: Kill opponent's piece
+S5 --> S2: Give up
+S5 --> S6: Finish Goal
+@enduml

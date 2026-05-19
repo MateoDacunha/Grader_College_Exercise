@@ -1,0 +1,25 @@
+@startuml
+State "White turns" as wt
+State "Black turns" as bt
+State "White wins" as ww
+State "Black wins" as bw
+State "Stalemate" as sm
+
+[*] --> wt : Start
+
+wt --> bt : "moves"
+
+bt --> wt : "moves"
+
+wt --> ww : "Checkmate"
+
+bt --> bw : "Checkmate"
+
+bt --> sm : "draw decision"
+
+wt --> sm : "draw decision"
+
+ww --> [*]
+bw --> [*]
+sm --> [*]
+@enduml

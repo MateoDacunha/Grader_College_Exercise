@@ -1,0 +1,9 @@
+[*] --> Purple
+Purple --> Yellow: Move
+Yellow --> Purple: Move
+Purple --> Resign
+Yellow --> abandon
+Yellow --> Draw
+Purple --> egalité
+Yellow --> [*]:Checkmate/Stalemate
+Purple --> [*]:Checkmate/Stalemate

@@ -1,0 +1,11 @@
+@startuml
+[*] --> Red
+Red --> Blue
+Blue --> Red
+Red --> Abandon
+Blue --> Abandon
+Blue --> Egalité
+Red --> Egalité
+Blue --> [*]
+Red --> [*]
+@enduml

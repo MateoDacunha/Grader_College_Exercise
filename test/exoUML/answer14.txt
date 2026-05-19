@@ -1,0 +1,17 @@
+@startuml
+State "Game Started" as State1
+[*] --> State1
+State "White turn" as State2
+State "Black turn" as State3
+State1 --> State2
+State2 --> State3 : move(w)
+State3 --> State2 : move(b)
+State "Check Mate" as State4
+State "Stalemate" as State5
+State2 --> State4 : move(w)
+State2 --> State5 : move(w)
+State3 --> State4 : move(b)
+State3 --> State5 : move(b)
+State4 --> [*] : Black or White wins, check(w,b), check(b,w)
+State5 --> [*] : Draw stale(w,b)
+@enduml

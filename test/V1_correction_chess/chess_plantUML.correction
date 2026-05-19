@@ -1,0 +1,14 @@
+@startuml
+state "White" as S1
+state "Black" as S2
+
+[*] --> S1
+S1 --> S2: Move
+S2 --> S1: Move
+S1 --> Resign
+S2 --> Resign
+S2 --> Draw
+S1 --> Draw
+S2 --> [*]:Checkmate/Stalemate
+S1 --> [*]:Checkmate/Stalemate
+@enduml

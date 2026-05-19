@@ -1,0 +1,24 @@
+@startuml
+State "Draw" as d
+State "White's Turn" as wt
+State "Black's Turn" as bt
+State "Check" as c1
+State "Check" as c2
+State "Checkmate" as cm
+
+[*] --> wt
+wt --> d : No legal moves
+bt --> d : No legal move
+wt --> bt : move white
+bt --> wt : move black
+wt --> c1 : under attack black's king
+c1 --> wt : move
+c1 --> cm : no legal move
+wt --> cm : resign
+bt --> c2: under attack white's king
+c2 --> bt : move
+c2 --> cm : no legal move
+bt --> cm : resign
+@enduml
+
+

@@ -1,0 +1,9 @@
+@startuml
+[*] --> White
+White --> Black: Move
+Black --> White: Move
+Black --> Black
+White --> Draw
+Black --> [*]:Checkmate/Stalemate
+White --> [*]:Checkmate/Stalemate
+@enduml

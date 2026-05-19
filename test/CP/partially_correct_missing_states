@@ -1,0 +1,9 @@
+@startuml
+[*] --> White
+White --> Black
+Black --> White
+Black --> Draw
+White --> Draw
+Black --> [*]
+White --> [*]
+@enduml

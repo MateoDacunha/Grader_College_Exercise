@@ -1,0 +1,6 @@
+@startuml
+[*] --> GameStarted
+GameStarted --> WhiteTurn
+WhiteTurn --> BlackTurn
+@enduml
+

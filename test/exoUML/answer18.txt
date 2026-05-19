@@ -1,0 +1,51 @@
+@startuml
+State "White to play" as State1
+State "Check for black check" as State2
+State "Ask Black" as State3
+State "Black wins" as State4
+State "Check for white cehck" as State5
+State "White must protect king" as State6
+State "Black must protect king" as State7
+State "Check for black cehck" as State8
+State "White wins" as State9
+State "Black To play" as State10
+State "Ask White" as State11
+State "Draw" as State12
+
+
+
+
+
+[*] --> State1
+State1 --> State3:"Ask for Draw"
+State1 --> State2:"White plays"
+State1 --> State9:"Resignation"
+State2 --> State12:"Stalemate"
+State2 --> State9:"Mate"
+State2 --> State10:"Nothing"
+State2 --> State7:"Check"
+
+State3 --> State12:"Black agrees"
+State3 --> State1:"Black rejects"
+
+State5 --> State1:"Nothing"
+State5 --> State6:"Check"
+State5 --> State4:"Mate"
+State5 --> State12:"Stalemate"
+
+State6 --> State8:"Plays"
+
+State7 --> State5:"Plays"
+
+State8 --> State9:"Mate"
+State8 --> State10:"Nothing"
+State8 --> State12:"Stalemate"
+
+State10 --> State11:"Ask for Draw"
+State10 --> State5:"Plays"
+State10 --> State9:"Resignation"
+
+State11 --> State12:"White Agrees"
+State11 --> State10:"White Rejects"
+@enduml
+

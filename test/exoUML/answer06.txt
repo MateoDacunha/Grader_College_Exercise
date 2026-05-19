@@ -1,0 +1,9 @@
+@startuml
+state "whiteturn" as wt
+state "blackturn" as bt
+state "whitewin" as ww
+state "blackwin" as bw
+[*]-->wt
+wt-->bt:"legalmove"
+bt-->wt:"legalmove"
+@enduml

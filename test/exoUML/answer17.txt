@@ -1,0 +1,28 @@
+@startuml
+state "white initial" as s1
+state "black initial" as s2
+state "draw" as s3
+state "win" as s4
+state "end" as s5
+state "no checkmate" as s6
+state "white initial" as s1
+[*]--> s1
+[*]--> s2
+s4 --> [*]
+s5 --> [*]
+
+s1 --> s4 
+s1 --> s3 :draw
+s1 --> s6 :play 
+
+
+s2 --> s4 
+s2 --> s3 :draw
+s2 --> s6 : play
+
+s3 --> s5
+
+s6 --> s1 : black turn 
+s6 --> s2 : white turn 
+
+@enduml

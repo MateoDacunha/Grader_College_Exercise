@@ -1,0 +1,20 @@
+@startuml
+state "White turn" as s1
+state "Black turn" as s2
+
+s1 --> s2: "move"
+state "white wins" as s3
+s2 --> s3: "Basic Moves"
+state "checkmate white" as s4
+s2 --> s4: ""
+state "checkmateblack" as s5
+state "Black wins" as s6
+s1 --> s6: "checkmate"
+[*] --> s1
+[*] --> s2
+s6 --> [*]
+s4 --> [*]
+s3 --> [*]
+
+@enduml
+

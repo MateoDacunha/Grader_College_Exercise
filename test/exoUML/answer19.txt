@@ -1,0 +1,16 @@
+@startuml
+scale 350 width
+
+state Idle
+state Playing_State {
+    Play --> Wait_opponent
+    Wait_opponent --> Play
+    Play : do : attack and/or capture
+    
+}
+
+[*] --> Idle
+Idle --> Play : "White pieces moves"
+Wait_opponent --> Idle : "opponent resigns"
+Wait_opponent --> Idle : "no legal move"
+@enduml

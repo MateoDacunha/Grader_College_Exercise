@@ -1,0 +1,19 @@
+@startuml
+State "White turn" as w
+State "Black turn" as b
+State "Resignation" as r
+State "Check" as c
+State "Checkmate" as cm
+State "Stalemate" as s
+[*] --> w : Game starts
+w --> c : White moves
+w --> r
+w --> s : White moves
+b --> r
+b --> s : Black moves
+b --> c : Black moves
+r --> [*]
+c --> cm : King has no escape or defense
+s --> [*]
+cm --> [*]
+@enduml

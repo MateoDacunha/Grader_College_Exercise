@@ -1,0 +1,18 @@
+@startuml
+State "Idle" as State1
+State "Black turn" as State2
+State "White turn" as State3
+State "Defeat" as State4
+State "Draw" as State5
+State1 --> State3:"Start"
+State2 --> State3:"Legal Move(black)"
+State3 --> State2:"Legal Move(white)"
+State3 --> State4:"No Legal Move(white)"
+State2 --> State4:"No Legal Move(black)"
+State3 --> State4:"Resignation"
+State2 --> State4:"Resignation"
+State2 --> State5:"Agreement"
+State2 --> State5:"3 fold repetition"
+State3 --> State5:"Agreement"
+State3 --> State5:"3 fold repetition"
+@enduml

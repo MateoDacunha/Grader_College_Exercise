@@ -1,0 +1,12 @@
+@startuml
+state "choosing team" as S1
+state "getting chess piece" as S2
+state "getting destination" as S3
+state "wait for opponent" as S4
+[*] --> S1
+S1 -->S2
+S2 --> S3
+S3 --> S4
+S4 --> S2 :"oppenent choice completed [/checkmate]"
+S4 --> [*] :"oppenent choice completed [checkmate]"
+@enduml

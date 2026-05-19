@@ -1,0 +1,19 @@
+@startuml
+state "Idle" as S0
+state "White Turn" as S1
+state "Black Turn" as S2
+state "White Lost" as S3
+state "Black Lost" as S4
+state "Draw" as S5
+
+[*]-->S0
+S0-->S1
+S1 --> S2: White Play
+S2 --> S1: Black Play"
+S1 --> S3: Can't play/Give up"
+S2 --> S4: "Can't play/Give up"
+S2 --> S5: "Ask for draw"
+S1 --> S5: "Ask for draw"
+
+@enduml
+

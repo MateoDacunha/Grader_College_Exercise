@@ -1,0 +1,9 @@
+@startuml
+[*] --> EstãoJogando: Movimento Branco
+EstãoJogando-->EstãoJogando: PlayValidMove
+
+EstãoJogando-->JogoVencedo: 1.JogarMovimentoInválido, 2.Xeque-mateInevitável, 3.Desistência
+EstãoJogando-->JogoEmpate: 1. PorAcordo, 2. RepetiçãoTríplice
+
+@enduml
+

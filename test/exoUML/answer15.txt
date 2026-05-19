@@ -1,0 +1,17 @@
+@startuml
+State "White" as W
+State "black" as B
+State "draw" as d
+State "resign" as r
+[*]-->W
+B-->W:"move"
+W-->B:"move"
+B-->d:"agreement/threefold rep"
+W-->d:"agreement/threefold rep"
+B-->r
+W-->r
+W-->[*]:"checkmate/stalemate"
+B-->[*]:"checkmate/stalemate"
+r-->[*]
+d-->[*]
+@enduml

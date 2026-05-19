@@ -1,0 +1,30 @@
+@startuml
+
+
+state "white turn" as State1
+
+[*]-->State1
+
+state "Black Turn" as State2
+state "Resignation" as Resign
+state "Checkmate" as checkmate
+state "Stalemate" as stalemate
+
+State1-->State2 : White Moves
+State2-->State1 : Black Moves
+
+State1-->Resign: Resign
+State2-->Resign: Resign
+
+State1-->checkmate:No Legal Move and king under attack
+State2-->checkmate:No Legal Move and king under attack
+
+State1-->stalemate:no legal moves
+State2-->stalemate :no legal moves
+
+Resign-->[*]
+checkmate-->[*]
+stalemate-->[*]
+
+
+@enduml

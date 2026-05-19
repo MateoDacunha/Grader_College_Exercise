@@ -1,0 +1,12 @@
+@startuml
+[*] --> Red
+Red --> Blue
+Blue --> Red
+Red --> Abandon
+Blue --> Abandon
+Blue --> Egalité
+Red --> Egalité
+Blue --> [*]
+Red --> [*]
+Red --> Also_An_unknown_state
+@enduml

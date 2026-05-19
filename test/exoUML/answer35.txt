@@ -1,0 +1,36 @@
+@startuml
+state "Idle" as i
+state "White Turn" as WT
+state "Black Turn" as BT
+
+state "White Play" as WP
+state "Black Play" as BP
+
+state "White Lose" as WL
+state "Black Lose" as BL
+
+
+state "Draw_1" as D1
+state "Draw_2" as D2
+state "Draw" as D
+
+WT --> WP: "white can play" 
+BT --> BP: "black can play" 
+
+WP --> BT: "play"
+BP --> WT: "play"
+
+WT --> D: "propose draw"
+D --> WT: "black refuse"
+BT --> D: "propose draw"
+D --> BT: "white refuse"
+
+D1 -->D: "black agree"
+D2 -->D: "white agree"
+
+BT --> BL: "black cannot play"
+BL --> BT: "give up"
+WT --> WL: "white cannot play"
+WL --> WT: "give up"
+
+@enduml

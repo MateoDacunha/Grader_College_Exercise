@@ -1,0 +1,9 @@
+[*] --> Walter
+Walter --> Jack: Move
+Jack --> Walter: Move
+Walter --> abandon
+Jack --> abandon
+Jack --> egalité
+Walter --> egalité
+Jack --> [*]:CheckStale
+Walter --> [*]:CheckStale

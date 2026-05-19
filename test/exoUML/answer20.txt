@@ -1,0 +1,19 @@
+@startuml
+[*] --> WhitePlayed : "White" plays a legal move
+
+state WhitePlayed
+state BlackPlayed
+
+
+WhitePlayed --> BlackPlayed : Black plays a legal move
+BlackPlayed --> WhitePlayed : White plays a legal move
+
+
+WhitePlayed --> [*] : "Black" has no legal move
+WhitePlayed --> [*] : "Black resigns
+WhitePlayed --> [*] : "Black" agrees on like draw 
+
+BlackPlayed --> [*] : "White" has no legal move
+BlackPlayed --> [*] : "White" resigns
+BlackPlayed --> [*] : "White" agrees on like draw
+@enduml
