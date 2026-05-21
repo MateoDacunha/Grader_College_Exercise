@@ -2,7 +2,7 @@ from groq import Groq
 import os
 from sys import argv
 
-
+DEBUG = True
 def main():
 
     note_max = 10
@@ -38,6 +38,7 @@ def main():
     Then you need to evaluate the student answer based on the result the note given is called final_grade which start a the value max_grade:
     - The maximum grade achievable is {note_max} called max_grade
     - For each line check if the same line is present in the student answer (we don't care about the difference of number of whitespace). If not take do final_grade -= max_grade/nbl
+    - For each transition that should not be here do final_grade -= max_grade/nbl/2
     - At the end print an ONLY line like this : "The final grade for student_filename is final_grade/{note_max}"
     """
 
@@ -48,13 +49,17 @@ def main():
                 "content": prompt,
             }
         ],
-        model="openai/gpt-oss-120b",
-        max_tokens=5000
+        # model="groq/compound",
+        model="openai/gpt-oss-20b",
+        # model="openai/gpt-oss-120b",
+        # model="meta-llama/llama-4-scout-17b-16e-instruct",
+        max_tokens=6500
 
     )
 
-    print(chat_completion.usage)
-    print();print()
+    if DEBUG:
+        print(chat_completion.usage)
+        print();print()
 
     print(chat_completion.choices[0].message.content)
 

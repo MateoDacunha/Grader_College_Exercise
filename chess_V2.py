@@ -1,47 +1,11 @@
 from sys import argv
 from textManage import *
+from chess_V1 import evaluate
 
 correction_file = "test/V1_correction_chess/chess.correction"
 note_max = 10
 
 DEBUG=False
-
-
-
-
-def evaluate(result : list, student_answer : list,note_max=10):
-
-    final_grade = note_max
-
-
-    for i in range(len(result)):
-        verified_answer = False
-        for j in range(len(student_answer)):
-            if len(result[i]) == len(student_answer[j]) and not verified_answer:
-                if result[i][0].lower() == student_answer[j][0].lower() and result[i][1].lower() == student_answer[j][1].lower():
-                    if len(result[i]) == 3:
-                        if result[i][2].lower() == student_answer[j][2].lower():
-                            verified_answer = True
-                    else:
-                        verified_answer = True
-            elif len(result[i]) >= len(student_answer[j]) and not verified_answer:
-                if result[i][0].lower() == student_answer[j][0].lower() and result[i][1].lower() == student_answer[j][1].lower():
-                    final_grade -= note_max/len(result)/2
-                    verified_answer = True
-
-
-        if not verified_answer:
-            final_grade -= note_max/len(result)
-
-    dif = len(student_answer) - len(result)
-    if dif > 0:
-        final_grade -= note_max/len(result)/2*dif
-
-    if final_grade < 0.1:
-        final_grade = 0
-
-    return final_grade
-
 
 def main():
 

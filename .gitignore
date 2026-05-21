@@ -3,6 +3,9 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# CSV file lock
+.~lock.*.csv*
+
 # C extensions
 *.so
 

@@ -10,6 +10,17 @@ class Equivalence:
         self.move_equivalent = None
 
 
+synonymes = {}
+
+synonymes["initial"] = ["[*]","start"]
+synonymes["white"]   = ["blanc","player1"]
+synonymes["black"]   = ["noir","player2"]
+synonymes["resign"]  = ["res","give up","abandon"]
+synonymes["draw"]    = ["egal","egalité","equal"]
+synonymes["mate"]    = ["checkmate","stalemate","check","stale"]
+synonymes["end"]     = ["end"]
+
+
 def split_line(line :list):
     newline = list()
     i = 0

@@ -1,5 +1,5 @@
 @startuml
-Beginning --> White
+Beginning ---> White
 White ---> Black: Move
 Black ---> White: Move
 White ---> Resign
