@@ -1,0 +1,17 @@
+@startuml
+'Hello
+[*] --> White
+White --> Black: Move
+Black --> White: Move
+White --> Resign
+Black --> Resign
+Black --> Draw
+White --> Draw
+/'
+Multiple Hello
+Bonjour
+Ola
+'/
+Black --> [*]:Checkmate/Stalemate
+White --> [*]:Checkmate/Stalemate
+@enduml

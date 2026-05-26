@@ -1,0 +1,11 @@
+@startuml
+[*] --> W
+W --> B: Move
+B --> W: Move
+W --> Resign
+B --> Resign
+B --> Draw
+W --> Draw
+B --> [*]:Checkmate/Stalemate
+W --> [*]:Checkmate/Stalemate
+@enduml

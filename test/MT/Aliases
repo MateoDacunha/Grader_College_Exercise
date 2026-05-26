@@ -1,0 +1,17 @@
+@startuml
+
+State "White"  as W
+State "Black"  as B
+State "Draw"   as D
+State "Resign" as R
+
+[*] --> W
+W --> B: Move
+B --> W: Move
+W --> R
+B --> R
+B --> D
+W --> D
+B --> [*]:Checkmate/Stalemate
+W --> [*]:Checkmate/Stalemate
+@enduml

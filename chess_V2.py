@@ -5,7 +5,7 @@ from chess_V1 import evaluate
 correction_file = "test/V1_correction_chess/chess.correction"
 note_max = 10
 
-DEBUG=False
+DEBUG=True
 
 def main():
 

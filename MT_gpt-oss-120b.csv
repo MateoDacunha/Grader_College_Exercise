@@ -1,0 +1,14 @@
+File,V2,V4
+test/MT/Aliases,7.8,10
+test/MT/Commentary,10,10
+test/MT/Correction,10,10
+test/MT/Final_State,10,10
+test/MT/Formating_blankline,10,10
+test/MT/Formating_identation,10,10
+test/MT/Formating_whitespace,10,10
+test/MT/Initial_Final_State,10,10
+test/MT/Initial_State,10,10
+test/MT/Ordering_all,10,10
+test/MT/Ordering_few,10,10
+test/MT/Renaming,10,10
+test/MT/Syntax_Capital,10,10

@@ -2,12 +2,14 @@ DEBUG = True
 
 class Equivalence:
     def __init__(self):
+        self.initial_equivalent = None
         self.white_equivalant = None
         self.black_equivalant = None
         self.resign_equivalent = None
         self.draw_equivalent = None
         self.check_stale_equivalent = None
         self.move_equivalent = None
+        self.end_equivalent = None
 
 
 synonymes = {}
@@ -18,7 +20,7 @@ synonymes["black"]   = ["noir","player2"]
 synonymes["resign"]  = ["res","give up","abandon"]
 synonymes["draw"]    = ["egal","egalité","equal"]
 synonymes["mate"]    = ["checkmate","stalemate","check","stale"]
-synonymes["end"]     = ["end"]
+synonymes["end"]     = ["[*]","end"]
 
 
 def split_line(line :list):
@@ -74,6 +76,8 @@ def replace(student_answer : list, Student : Equivalence, Result : Equivalence):
     for i in range(len(student_answer)):
         for j in range(len(student_answer[i])):
             match student_answer[i][j]:
+                case Student.initial_equivalent:
+                    student_answer[i][j] = Result.initial_equivalent
                 case Student.white_equivalant:
                     student_answer[i][j] = Result.white_equivalant
                 case Student.black_equivalant:
@@ -86,6 +90,8 @@ def replace(student_answer : list, Student : Equivalence, Result : Equivalence):
                     student_answer[i][j] = Result.draw_equivalent
                 case Student.move_equivalent:
                     student_answer[i][j] = Result.move_equivalent
+                case Student.end_equivalent:
+                    student_answer[i][j] = Result.end_equivalent
 
 
 def read_uml(file_name):
@@ -119,11 +125,15 @@ def preprocessor_wrapped(tab : list):
 
     length_student = len(tab)
 
+    for i in range(length_student):
+        if tab[i][0].lower() in synonymes["initial"]:
+            eq.initial_equivalent = tab[i][0]
+
     # Check White
     # White is used as a "root" for finding other equivalance 
     i=0
     while i<length_student and eq.white_equivalant == None:
-        if (tab[i][0] == '[*]'):
+        if (tab[i][0].lower() in synonymes["initial"]):
             eq.white_equivalant = tab[i][1]
         i+=1
 
@@ -173,19 +183,21 @@ def preprocessor_wrapped(tab : list):
             except:
                 pass
 
+    for i in range(length_student):
+        if tab[i][1].lower() in synonymes["end"]:
+            eq.end_equivalent = tab[i][1]
+
     return eq
                 
 
 
 def preprocessor(answer : list,student_answer : list):
 
-
-
-
     Student = preprocessor_wrapped(student_answer)
     if Student == -1:
         return -1
     Result = preprocessor_wrapped(answer)
+    print(Result.initial_equivalent)
     if Student == -1:
         return -2
 

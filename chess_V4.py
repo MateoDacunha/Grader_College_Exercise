@@ -3,7 +3,7 @@ import os
 from sys import argv
 
 DEBUG = True
-def main():
+def AI():
 
     note_max = 10
     correction_file = "test/V1_correction_chess/chess.correction"
@@ -50,8 +50,8 @@ def main():
             }
         ],
         # model="groq/compound",
-        model="openai/gpt-oss-20b",
-        # model="openai/gpt-oss-120b",
+        # model="openai/gpt-oss-20b",
+        model="openai/gpt-oss-120b",
         # model="meta-llama/llama-4-scout-17b-16e-instruct",
         max_tokens=6500
 
@@ -68,4 +68,4 @@ def main():
     return
 
 if __name__ == "__main__":
-    main()
+    AI()

@@ -6,11 +6,12 @@ then
     echo "      -h print this help"
     echo "      int [0;15] a sum of value for program with chess_V1.py = 1, chess_V2.py = 2, chess_V3.py = 4, chess_V4.py = 8"
     echo "  val2 :"
-    echo "      int [0;15] a sum of value for test with V1_correction_chess = 1, V2_correction_chess = 2, exoUML = 4, CP = 8"
+    echo "      int [0;31] a sum of value for test with V1_correction_chess = 1, V2_correction_chess = 2, exoUML = 4, CP = 8, MT=16"
 
     exit
 fi
 
+echo -n "File" > grade.csv
 
 if [ $# -eq 0 ]
 then 
@@ -21,25 +22,29 @@ else
     if [ $(($val&1)) -ne 0 ]
     then
         PROG+=("chess_V1.py")
+        echo ",V1" >> grade.csv
     fi
     if [ $(($val&2)) -ne 0 ]
     then
         PROG+=("chess_V2.py")
+        echo ",V2" >> grade.csv
     fi
     if [ $(($val&4)) -ne 0 ]
     then
         PROG+=("chess_V3.py")
+        echo ",V3" >> grade.csv
     fi
     if [ $(($val&8)) -ne 0 ]
     then
         PROG+=("chess_V4.py")
+        echo ",V4" >> grade.csv
     fi
 fi
 
 
 if [ $# -lt 2 ]
 then 
-    FOLDER=("test/V1_correction_chess/*.correction" "test/V2_correction_chess/*.correction" "test/exoUML/*" "test/CP/*")
+    FOLDER=("test/V1_correction_chess/*.correction" "test/V2_correction_chess/*.correction" "test/exoUML/*" "test/CP/*" "test/MT/*")
 else
     val=$2
     FOLDER=()
@@ -59,6 +64,10 @@ else
     then
         FOLDER+=("test/CP/*")
     fi
+    if [ $(($val&16)) -ne 0 ]
+    then
+        FOLDER+=("test/MT/*")
+    fi
 fi
 
 
@@ -70,7 +79,7 @@ GREEN='\033[0;92m'
 RED='\033[0;91m'
 NC='\033[0;0;0m'
 
-echo "File,V1,V2,V3,V4" > grade.csv
+
 
 writeResult () {
     exit_output=$?
@@ -107,7 +116,7 @@ do
         done 
         if [ $# -ne 0 ] && [ $(($1&8)) -ne 0 ] # too much token so have to wait if we do AI
         then
-            sleep 60
+            sleep 65
         fi
     done
 done
